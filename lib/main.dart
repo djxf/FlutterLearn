@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  print("Hello Dart");
   runApp(MyApp());
 }
 
@@ -11,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.red,
       ),
       home: MyHomePage(title: 'Flutter 牛逼'),
     );
@@ -46,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
+      _counter += 10;
     });
   }
 
