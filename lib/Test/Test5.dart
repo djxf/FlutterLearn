@@ -1,4 +1,5 @@
 
+import 'dart:math';
 
 main(List<String> args) {
     var p = Person("zhangsan");
@@ -9,6 +10,9 @@ main(List<String> args) {
 
     var p3 = Person2._internal("zhangsan", 100);
     print(p3.age);
+
+    print(Color.values);
+    print(min(100, 200));
 }
 
 class Person {
@@ -67,4 +71,12 @@ class Circle extends Shape {
 
   }
 
+}
+
+//隐式接口： 所有的类都是接口
+
+
+//枚举
+enum Color {
+  RED,GREEN,BLACK,WHITE
 }
