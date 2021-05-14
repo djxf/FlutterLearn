@@ -3,6 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'MyRichTextCompent.dart';
+
 main() {
     //1. 调用一个函数runApp函数
   runApp(MyApp());
@@ -26,7 +28,12 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               title: Text("商品列表"),
             ),
-            body: MyHomeCount(),
+            body: MyHomeTextWidget(),
+            floatingActionButton: FloatingActionButton(
+              child: Icon(Icons.add),
+              onPressed: () => print("floatActionButton"),
+
+            ),
           )
       );
   }
@@ -90,11 +97,13 @@ class MyProductItem extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.red
+                Center(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.red
+                    ),
                   ),
                 )
               ]
@@ -205,3 +214,7 @@ class _MyHomeCountState extends State<MyHomeCount> {
  * StatefulWidget的生命周期：
  *
  */
+
+
+
+
