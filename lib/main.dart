@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               title: Text("商品列表"),
             ),
-            body: Body(),
+            body: MyHomeCount(),
           )
       );
   }
@@ -114,4 +114,94 @@ class MyProductItem extends StatelessWidget {
       );
   }
 
+
+  //State命名以下划线开头
+/**
+ * 为什么flutter在设计的时候StatefulWidget的build方法放在State中？
+ *  1. build出来的Widget需要依赖State中的变量。
+ *  2. 在flutter的运行过程中：widget是不断销毁和创建的。
+ *
+ */
 }
+
+class MyHomeCount extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+      return _MyHomeCountState();
+  }
+}
+
+class _MyHomeCountState extends State<MyHomeCount> {
+
+  int _count = 0;
+
+  @override
+  void initState() {
+    print("onCall: initState");
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {
+     return Center(
+
+       child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: [
+           Row(
+             mainAxisAlignment:  MainAxisAlignment.center,
+             children: [
+               RaisedButton(
+                   child: Text("+"),
+                   color: Colors.green,
+                   onPressed: () {
+                     _count++;
+                     setState(() {
+
+                     });
+                   }),
+               RaisedButton(
+                   child: Text("-"),
+                   color: Colors.red,
+                   onPressed: () {
+                     _count--;
+                     setState(() {
+
+                     });
+                   }),
+             ],
+           ),
+           Text(
+             "当前计数：$_count",
+             style: TextStyle(
+               fontSize: 25
+             ),
+           )
+         ],
+       ),
+     );
+  }
+
+  @override
+  void dispose() {
+    print("onCall: dispose");
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(covariant MyHomeCount oldWidget) {
+    print("onCall: didUpdateWidget");
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void didChangeDependencies() {
+    print("onCall: didChangeDependencies");
+    super.didChangeDependencies();
+  }
+
+}
+
+/**
+ * StatefulWidget的生命周期：
+ *
+ */
