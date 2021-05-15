@@ -32,21 +32,25 @@ class MyHomeTextWidget extends StatelessWidget {
         return Column(
           children: [
             FlatButton(
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 onPressed: () => print("flatButton"),
                 color: Colors.green,
                 child: Text("flatButton")),
             OutlineButton(
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 onPressed: () => print("outlineButton"),
                 color: Colors.red,
                 child: Text("outlineButton")
             ),
             RaisedButton(
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
               onPressed: () => print("raiseButton"),
               color: Colors.amberAccent,
               child: Text("raisedButton"),
             ),
             //自定义Button
             FlatButton(
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 color: Colors.black12,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)

@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'LayoutWidget.dart';
 import 'MyRichTextCompent.dart';
 
 main() {
@@ -26,9 +27,9 @@ class MyApp extends StatelessWidget {
           home: Scaffold(
             appBar: AppBar(
               centerTitle: true,
-              title: Text("商品列表"),
+              title: Text("登录"),
             ),
-            body: MyTest(),
+            body: LayoutWidget(),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () => print("floatActionButton"),
@@ -152,7 +153,6 @@ class _MyHomeCountState extends State<MyHomeCount> {
   @override
   Widget build(BuildContext context) {
      return Center(
-
        child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
