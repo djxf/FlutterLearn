@@ -219,10 +219,6 @@ class MyTest extends StatefulWidget {
 
 class _MyTestState extends State<MyTest> {
 
-
-  _MyTestState() {
-    print("lifecycle: createState");
-  }
   @override
   void initState() {
     super.initState();
@@ -293,31 +289,8 @@ class _MyTestState extends State<MyTest> {
  *      据简书：1 系统语言或应用主题改变时回调。
  *             2
  * 4 build：返回需要被渲染的widget，会被调用多次。避免被执行多次而导致状态异常。
- * 四个阶段：
- *    1 初始化阶段：createState，initState
- *    2 组件创建阶段： didchangeDependencies，build。
- *    3 触发组件build，didChangeDependencies，setState，didupdateWidget，都会引发组件重新build。
- *    4 组件销毁阶段：deactivate，dispose。
  *
- * 点击Hot Reload触发生命周期：
- *    reassemble()
- *    didUpdateWidget()
- *    build()
  *
- * 点击Hot Restart
-    lifecycle: createState
-    I/flutter (20620): initState
-    I/flutter (20620): didChangeDependencies()
-    I/flutter (20620): build
-    I/flutter (20620): reassemble()
-    I/flutter (20620): didUpdateWidget
-    I/flutter (20620): build
-
-    总结：
-        1 StatefulWidget：会被触发多次build。触发函数是setState，didChangeDependencies。
-          didUpdateWidget.
-        2 父组件调用setState不仅会触发自己build、还会引发子组件build。虽然子组件没有任何改动。
-
  */
 
 
