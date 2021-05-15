@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               title: Text("商品列表"),
             ),
-            body: MyHomeTextWidget(),
+            body: MyTest(),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () => print("floatActionButton"),
@@ -210,8 +210,86 @@ class _MyHomeCountState extends State<MyHomeCount> {
 
 }
 
+class MyTest extends StatefulWidget {
+  const MyTest({Key key}) : super(key: key);
+
+  @override
+  _MyTestState createState() => _MyTestState();
+}
+
+class _MyTestState extends State<MyTest> {
+
+  @override
+  void initState() {
+    super.initState();
+    print("initState");
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("didChangeDependencies()");
+  }
+
+  /**
+   * 每次热重载都会调用该函数，可用于debug检查代码问题
+   */
+  @override
+  void reassemble() {
+    print("reassemble()");
+    super.reassemble();
+  }
+
+  /**
+   * 在widget重新构建时，Flutter framework会调用widget.canUpdate来检测Widget树同一位置的新旧节点。
+   * 然后决定是否需要更新。如果widget.canUpdate返回true则会调用此回调。
+   * 1 父组件发生build的情况下 子组件该方法才会被调用。
+   * 2 该方法调用后一定会被调用本组件的build方法。
+   */
+  @override
+  void didUpdateWidget(covariant MyTest oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print("didUpdateWidget");
+  }
+
+  /**
+   * 组件被移除后调用，如果未被插入到其他节点。则继续调用dispose方法。
+   */
+  @override
+  void deactivate() {
+    super.deactivate();
+    print("lifecycle: deactivate");
+  }
+
+  /**
+   * 永久移除组件，并释放组件资源。
+   */
+  @override
+  void dispose() {
+    super.dispose();
+    print("dispose: deactivate");
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    print("build");
+    return Center(
+      child: Text("生命周期测试"),
+    );
+  }
+}
+
+
 /**
  * StatefulWidget的生命周期：
+ * 1 createState: StatefulWidget创建State的方法，当StatefulWidget被调用时会立即执行createState。
+ * 2 initState：State初始化时调用。可以在此期间执行State变量的初始赋值。也可以与服务端进行交互。
+ * 3 didChangeDependencies: 当State对象的依赖发生变化时会被调用。回调时机有待考证。
+ *      据简书：1 系统语言或应用主题改变时回调。
+ *             2
+ * 4 build：返回需要被渲染的widget，会被调用多次。避免被执行多次而导致状态异常。
+ *
  *
  */
 

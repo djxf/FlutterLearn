@@ -52,14 +52,14 @@ class MyHomeTextWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12)
                 ),
                 onPressed: () => print("自定义按钮"),
-
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Icon(Icons.favorite, color: Colors.red,),
                     Text("喜欢作者")
                   ],
-                ))
+                )),
+            MyImageContent()
           ],
         );
   }
@@ -78,6 +78,24 @@ class _MyTestStatefulWidgetState extends State<MyTestStatefulWidget> {
     return Container();
   }
 
+}
+
+/// 图片
+///
+class MyImageContent extends StatelessWidget {
+  const MyImageContent({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image(
+      color: Colors.green,
+      colorBlendMode: BlendMode.colorDodge,
+      image: NetworkImage("https://oss.zhidx.com/uploads/2020/01/5e19a395eea67_5e19a395ebb5c_5e19a395ebb0e_%E5%89%AF%E6%9C%AC.jpg"),
+      width: 200,
+      height: 200,
+      fit: BoxFit.fitWidth
+    );
+  }
 }
 
 
