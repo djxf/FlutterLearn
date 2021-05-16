@@ -29,11 +29,10 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               title: Text("登录"),
             ),
-            body: LayoutWidget(),
+            body: MTest3(),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () => print("floatActionButton"),
-
             ),
           )
       );

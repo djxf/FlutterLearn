@@ -41,8 +41,8 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             border: OutlineInputBorder()
           ),
           onChanged: (value) {
-            if (value.length > 5) {
-
+            if (value.length > 10) {
+                usernameController.text = value;
             }
           },
           onSubmitted: (value) {
@@ -71,14 +71,62 @@ class _LayoutWidgetState extends State<LayoutWidget> {
                   var username = usernameController.text;
                   var password = passwordController.text;
                   print("username: $username, passwrod: $password");
+                  usernameController.text = "";
+                  passwordController.text = "";
               },
               child: Text("登 录")),
-
         )
       ],
     );
   }
 }
+
+
+
+class MTest2 extends StatelessWidget {
+  const MTest2({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 200,
+      height: 200,
+      color: Colors.red,
+      child: Align(
+        alignment: Alignment(1, 1),
+        child: Icon(Icons.pets, size: 50,),
+      ),
+    );
+  }
+}
+
+class MTest3 extends StatelessWidget {
+  const MTest3({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 300,
+      margin: EdgeInsets.all(10),
+      alignment: Alignment(-1, 0),
+      child: Icon(Icons.pets),
+      decoration: BoxDecoration(
+        color: Colors.orange,
+        boxShadow: [
+          BoxShadow(color: Colors.orange, offset: Offset(10, 10), spreadRadius: 5, blurRadius: 5),
+        ]
+      ),
+    );
+  }
+}
+
+
+/**
+ * flex组件
+ *
+ */
+
 
 
 
