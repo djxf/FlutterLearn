@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'LayoutWidget.dart';
 import 'MyRichTextCompent.dart';
+import 'Test/Flex.dart';
 
 main() {
     //1. 调用一个函数runApp函数
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               title: Text("登录"),
             ),
-            body: MTest3(),
+            body: MyFlexTest(),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () => print("floatActionButton"),
