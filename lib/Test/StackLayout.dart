@@ -28,12 +28,23 @@ class MyStackLayout extends StatelessWidget {
         Image.network(
             "http://wx2.sinaimg.cn/mw600/0089jzyPly1gqnkrabmppj30jg0isq4a.jpg"),
         Positioned(
-          right: 10,
+          left: 10,
           bottom: 10,
-          child: Text(
-            "比尔盖茨和贝索斯",
-            style: TextStyle(color: Colors.green),
-          ),
+          child: Row(mainAxisSize: MainAxisSize.max,
+              children: [
+            Text(
+              "比尔盖茨和贝索斯",
+              style: TextStyle(color: Colors.green),
+            ),
+            Positioned(
+              child: Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
+              right: 10,
+              bottom: 10,
+            )
+          ]),
         ),
       ],
     );
