@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'LayoutWidget.dart';
 import 'MyRichTextCompent.dart';
 import 'Test/Flex.dart';
+import 'Test/MyListViewLayout.dart';
 import 'Test/StackLayout.dart';
 
 main() {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               title: Text("登录"),
             ),
-            body: MyStackLayout(),
+            body: MyGridView2(),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () => print("floatActionButton"),
