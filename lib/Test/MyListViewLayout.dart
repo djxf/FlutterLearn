@@ -69,7 +69,6 @@ class MyGridView extends StatelessWidget {
 
 class MyGridView2 extends StatelessWidget {
   const MyGridView2({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -89,3 +88,43 @@ class MyGridView2 extends StatelessWidget {
     );
   }
 }
+/// GridView extends BoxScrollView   buildChildLayout ===>  SliverGrid
+/// ListView extends BoxScrollView,  buildChildLayout ===>  SliverGrid
+/// 滚动监听 ====>
+/// 
+
+class MyCustomScrollView extends StatelessWidget {
+  const MyCustomScrollView({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+        slivers: [
+           SliverAppBar(
+              pinned: true,
+              expandedHeight: 200,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text("Hello Flutter"),
+                background: Image.network("http://wx3.sinaimg.cn/mw600/0089jzyPly1gqp4tgn5nxj30qo0qo41j.jpg"),
+              ),
+           ),
+            SliverGrid(
+                gridDelegate : SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  childAspectRatio: 1.5,
+                ),
+                delegate : SliverChildBuilderDelegate(
+                    (context, count) {
+                      return Container(
+                        color: Color.fromARGB(255, (count), Random().nextInt((count)), 0),
+                      );
+                    }
+                )
+            )
+        ],
+    );
+  }
+}
+
