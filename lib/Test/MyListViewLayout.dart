@@ -1,7 +1,10 @@
 
 
+<<<<<<< HEAD
 import 'dart:math';
 
+=======
+>>>>>>> origin/master
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +19,7 @@ class MyListViewLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+<<<<<<< HEAD
       scrollDirection: Axis.vertical,
       itemExtent: 100,//指明item的高度
       children:
@@ -24,12 +28,23 @@ class MyListViewLayout extends StatelessWidget {
             leading: Icon(Icons.account_box_sharp),
             trailing: Icon(Icons.delete),
             title: Text("联系人$index"),
+=======
+      scrollDirection: Axis.horizontal,
+      itemExtent: 100,//指明item的高度
+      children:
+        List.generate(100, (index) {
+          return ListTile(
+            leading: Icon(Icons.account_box_sharp),
+            trailing: Icon(Icons.delete),
+            title: Text("联系人"),
+>>>>>>> origin/master
             subtitle: Text("联系人电话号码:18888888888"),
           );
         }),
     );
   }
 }
+<<<<<<< HEAD
 
 class MyListViewLayout2 extends StatelessWidget {
   const MyListViewLayout2({Key key}) : super(key: key);
@@ -128,3 +143,5 @@ class MyCustomScrollView extends StatelessWidget {
   }
 }
 
+=======
+>>>>>>> origin/master

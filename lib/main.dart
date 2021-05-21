@@ -28,11 +28,11 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Scaffold(
-            // appBar: AppBar(
-            //   centerTitle: true,
-            //   title: Text("登录"),
-            // ),
-            body: MyCustomScrollView(),
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text("登录"),
+            ),
+            body: MyListViewLayout(),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.add),
               onPressed: () => print("floatActionButton"),
