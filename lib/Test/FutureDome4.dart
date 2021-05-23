@@ -1,6 +1,8 @@
 
 
 import 'dart:io';
+
+import 'dart:isolate';
 /// await async。
 main(List<String> args) {
     print("main start");
@@ -24,3 +26,10 @@ Future<void> getData() async {
   var res3 = await getNetworkData(res2);
   print(res3);
 }
+
+void calc() {
+  ///
+}
+
+///网络请求库 dio库。
+///
