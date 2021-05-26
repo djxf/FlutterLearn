@@ -70,7 +70,8 @@ class _StarRadioState extends State<StarRadio> {
         list.add(star);
       }
       //未满星星 利用裁剪即可。
-      double width = (widget.size * (widget.count - widget.rating / widget.maxRating * widget.count));
+      double width = (widget.size * (widget.rating/2 - fullStar));
+      print(width);
       final halfStar = ClipRect(
         clipper : StarClipper(width),
         child: star,

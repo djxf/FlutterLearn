@@ -11,7 +11,7 @@ main(List<String> args) {
         title: Text("豆瓣"),
         centerTitle: true,
       ),
-      body: Center(child: StarRadio(rating: 8.3,)),
+      body: Center(child: StarRadio(rating: 8.7,)),
     ),
     debugShowCheckedModeBanner: false,
   ));
