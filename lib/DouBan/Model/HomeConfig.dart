@@ -6,4 +6,6 @@ class HomeConfig {
       final int c1 = 100;
       int c2 = HomeConfig().c1 + 200;
 
+      static const int movieCount = 1;
+
 }

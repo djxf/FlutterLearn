@@ -15,13 +15,13 @@ class HomeRequest {
 
     //2 发送网络请求获取数据
     final result = await HttpRequest.request(movieURL);
-    final subjects = result["subjects"];
+    //final subjects = result["subjects"];
 
     //3 讲Map转换成Model
     List<MovieItem> movies = [];
-    for(var sub in subjects) {
-      movies.add(MovieItem.fromMap(sub));
-    }
+    // for(var sub in subjects) {
+    //   movies.add(MovieItem.fromMap(sub));
+    // }
     print(movies);
   }
 }
