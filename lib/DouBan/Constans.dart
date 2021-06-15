@@ -3,8 +3,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'Page/Home.dart';
+
 List<Widget> pages = [
-  Text("Hello World"),
+  HomePage(),
   Text("Hello Flutter"),
 ];
 
