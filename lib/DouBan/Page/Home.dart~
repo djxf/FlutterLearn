@@ -23,7 +23,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
       child: ListView(
         children: List.generate(100, (index) {
           return Column(
